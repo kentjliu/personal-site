@@ -29,7 +29,7 @@
       </div>
       <div class="right-col">
         <p>Take a listen</p>
-        <img src="img/play.png" id="icon" alt="#" onclick="changeState()">
+        <img src="img/play.png" id="icon" alt="#">
       </div>
     </div>
   </div>
@@ -56,16 +56,6 @@
       icon.src = "img/play.png"
     }
   </script>-->
-  <script>
-    function changeState(){
-      const image = document.getElementById("icon");
-      if(image.src.includes("play.png")){
-        image.src = "/img/pause.png";
-      } else{
-        image.src = "/img/play.png";
-      }
-    }
-  </script>
 
   <script type="module">
     document.addEventListener("DOMContentLoaded", function () {
