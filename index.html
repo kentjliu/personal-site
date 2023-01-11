@@ -8,6 +8,7 @@
   <!-- Place favicon.ico in the root directory -->
   <!--<link rel="stylesheet" href="css/normalize.css">-->
   <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
@@ -37,7 +38,7 @@
     <!--Plays random song from works page-->
   </audio>
 
-  <script>
+  <script type="module">
     const mySong = document.getElementById("mySong");
     const icon = document.getElementById("icon");
 
@@ -50,17 +51,42 @@
         icon.src = "img/play.png";
       }
     }
+
+    if(mySong.ended){
+      icon.src = "img/play.png"
+    }
   </script>
 
-  <script>
+  <script type="module">
     document.addEventListener("DOMContentLoaded", function () {
+      /*const audio1 = require('url:./audio/evenings.wav');
+      const audio2 = require('url:./audio/lofiBeat.wav');
+      const audio3 = require('url:./audio/rockMe.wav');
+      const audio4 = require('url:./audio/Royce.wav');
+      const audio5 = require('url:./audio/silk.wav');
+      const audio6 = require('url:./audio/summertimeFunk.wav');
+      const audio7 = require('url:./audio/unreleased1.wav');*/
+
       const audioFiles =
-        ["evenings.wav", "lofiBeat.wav", "rockMe.wav", "Royce.wav", "silk.wav", "summertimeFunk.wav", "unreleased.wav"];
+        ["evenings.wav", "lofiBeat.wav", "rockMe.wav", "Royce.wav", "silk.wav", "summertimeFunk.wav", "unreleased1.wav"];
       const audio = document.getElementById("mySong");
       const source = document.createElement("source");
       const randomFile = audioFiles[Math.floor(Math.random()*audioFiles.length)];
-      source.src = "audio/" + randomFile;
+      source.src = "/audio/" + randomFile;
       audio.appendChild(source);
+
+      /*const audio1 = require('url:./audio/evenings.wav');
+      const audio2 = require('url:./audio/lofiBeat.wav');
+      const audio3 = require('url:./audio/rockMe.wav');
+      const audio4 = require('url:./audio/Royce.wav');
+      const audio5 = require('url:./audio/silk.wav');
+      const audio6 = require('url:./audio/summertimeFunk.wav');
+      const audio7 = require('url:./audio/unreleased1.wav');
+
+      const audioFiles = [audio1, audio2, audio3, audio4, audio5, audio6, audio7];
+      const audio = document.getElementById("mySong");
+      const randomFile = audioFiles[Math.floor(Math.random()*audioFiles.length)];
+      audio.append(randomFile.src);*/
     })
   </script>
 

@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <title>Some Works</title>
 
-  <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
   <!--<link rel="stylesheet" href="css/normalize.css">-->
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <style>
     *{
       margin: 0;
@@ -119,7 +119,7 @@
         <p>Genre: Lo-fi/Chill</p>
         <h1>Lo-fi Beat</h1>
         <div class="track">
-          <img src="../img/play1.png" alt="#" id="playButton1">
+          <img src="../img/play1.png" alt="play button" id="playButton1">
           <div id="waveform1"></div>
         </div>
       </div>
@@ -130,7 +130,7 @@
         <p>Genre: House/EDM</p>
         <h1>Summertime Funk</h1>
         <div class="track">
-          <img src="../img/play1.png" alt="#" id="playButton2">
+          <img src="../img/play1.png" alt="play button" id="playButton2">
           <div id="waveform2"></div>
         </div>
       </div>
@@ -141,7 +141,7 @@
         <p>Genre: RnB</p>
         <h1>Rock Me</h1>
         <div class="track">
-          <img src="../img/play1.png" alt="#" id="playButton3">
+          <img src="../img/play1.png" alt="play button" id="playButton3">
           <div id="waveform3"></div>
         </div>
       </div>
@@ -152,7 +152,7 @@
         <p>Genre: Trap</p>
         <h1>Evenings</h1>
         <div class="track">
-          <img src="../img/play1.png" alt="#" id="playButton4">
+          <img src="../img/play1.png" alt="play button" id="playButton4">
           <div id="waveform4"></div>
         </div>
       </div>
@@ -163,7 +163,7 @@
         <p>Genre: Bachata</p>
         <h1>Baila Conmigo Instrumental</h1>
         <div class="track">
-          <img src="../img/play1.png" alt="#" id="playButton5">
+          <img src="../img/play1.png" alt="play button" id="playButton5">
           <div id="waveform5"></div>
         </div>
       </div>
@@ -174,7 +174,7 @@
         <p>Genre: Chill Funk</p>
         <h1>Silky</h1>
         <div class="track">
-          <img src="../img/play1.png" alt="#" id="playButton6">
+          <img src="../img/play1.png" alt="play button" id="playButton6">
           <div id="waveform6"></div>
         </div>
       </div>
@@ -185,7 +185,7 @@
         <p>Genre: Pop/Dance</p>
         <h1>BBQ Chicken (Unreleased)</h1>
         <div class="track">
-          <img src="../img/play1.png" alt="#" id="playButton7">
+          <img src="../img/play1.png" alt="play button" id="playButton7">
           <div id="waveform7"></div>
         </div>
       </div>
@@ -194,7 +194,8 @@
 
   <!--load tracks-->
   <script src="https://unpkg.com/wavesurfer.js"></script>
-  <script>
+  <script type="module">
+    const audio1 = require('url:../audio/lofiBeat.wav');
     const playButton = document.getElementById("playButton1");
 
     const wavesurfer = WaveSurfer.create({
@@ -207,7 +208,7 @@
       barRadius: 4
     });
 
-    wavesurfer.load('../audio/lofiBeat.wav');
+    wavesurfer.load(audio1);
 
     playButton.onclick = function (){
       wavesurfer.playPause();
@@ -224,7 +225,8 @@
     })
   </script>
 
-  <script>
+  <script type="module">
+    const audio2 = require('url:../audio/summertimeFunk.wav');
     const playButton2 = document.getElementById("playButton2");
 
     const wavesurfer2 = WaveSurfer.create({
@@ -237,7 +239,7 @@
       barRadius: 4
     });
 
-    wavesurfer2.load('../audio/summertimeFunk.wav');
+    wavesurfer2.load(audio2);
 
     playButton2.onclick = function (){
       wavesurfer2.playPause();
@@ -254,7 +256,8 @@
     })
   </script>
 
-  <script>
+  <script type="module">
+    const audio3 = require('url:../audio/rockMe.wav');
     const playButton3 = document.getElementById("playButton3");
 
     const wavesurfer3 = WaveSurfer.create({
@@ -267,7 +270,7 @@
       barRadius: 4
     });
 
-    wavesurfer3.load('../audio/rockMe.wav');
+    wavesurfer3.load(audio3);
 
     playButton3.onclick = function (){
       wavesurfer3.playPause();
@@ -284,7 +287,8 @@
     })
   </script>
 
-  <script>
+  <script type="module">
+    const audio4 = require('url:../audio/evenings.wav');
     const playButton4 = document.getElementById("playButton4");
 
     const wavesurfer4 = WaveSurfer.create({
@@ -297,7 +301,7 @@
       barRadius: 4
     });
 
-    wavesurfer4.load('../audio/evenings.wav');
+    wavesurfer4.load(audio4);
 
     playButton4.onclick = function (){
       wavesurfer4.playPause();
@@ -314,7 +318,8 @@
     })
   </script>
 
-  <script>
+  <script type="module">
+    const audio5 = require('url:../audio/Royce.wav');
     const playButton5 = document.getElementById("playButton5");
 
     const wavesurfer5 = WaveSurfer.create({
@@ -327,7 +332,7 @@
       barRadius: 4
     });
 
-    wavesurfer5.load('../audio/Royce.wav');
+    wavesurfer5.load(audio5);
 
     playButton5.onclick = function (){
       wavesurfer5.playPause();
@@ -344,7 +349,8 @@
     })
   </script>
 
-  <script>
+  <script type="module">
+    const audio6 = require('url:../audio/silk.wav');
     const playButton6 = document.getElementById("playButton6");
 
     const wavesurfer6 = WaveSurfer.create({
@@ -357,7 +363,7 @@
       barRadius: 4
     });
 
-    wavesurfer6.load('../audio/silk.wav');
+    wavesurfer6.load(audio6);
 
     playButton6.onclick = function (){
       wavesurfer6.playPause();
@@ -374,7 +380,8 @@
     })
   </script>
 
-  <script>
+  <script type="module">
+    const audio7 = require('url:../audio/unreleased1.wav');
     const playButton7 = document.getElementById("playButton7");
 
     const wavesurfer7 = WaveSurfer.create({
@@ -387,7 +394,7 @@
       barRadius: 4
     });
 
-    wavesurfer7.load('../audio/unreleased.wav');
+    wavesurfer7.load(audio7);
 
     playButton7.onclick = function (){
       wavesurfer7.playPause();
