@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Kent Liu</title>
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <!--<link rel="stylesheet" href="css/normalize.css">-->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="navbar">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="pages/about.html">ABOUT</a></li>
+        <li><a href="pages/works.html">WORKS</a></li>
+        <li><a href="pages/connect.html">CONNECT</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="left-col">
+        <h1>KENT<br>LIU</h1>
+      </div>
+      <div class="right-col">
+        <p>Take a listen</p>
+        <img src="img/play.png" id="icon">
+      </div>
+    </div>
+  </div>
+
+  <audio id="mySong">
+    <!--Plays random song from works page-->
+  </audio>
+
+  <script>
+    const mySong = document.getElementById("mySong");
+    const icon = document.getElementById("icon");
+
+    icon.onclick = function (){
+      if(mySong.paused){
+        mySong.play();
+        icon.src = "img/pause.png";
+      } else{
+        mySong.pause();
+        icon.src = "img/play.png";
+      }
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const audioFiles =
+        ["evenings.wav", "lofiBeat.wav", "rockMe.wav", "Royce.wav", "silk.wav", "summertimeFunk.wav", "unreleased.wav"];
+      const audio = document.getElementById("mySong");
+      const source = document.createElement("source");
+      const randomFile = audioFiles[Math.floor(Math.random()*audioFiles.length)];
+      source.src = "audio/" + randomFile;
+      audio.appendChild(source);
+    })
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
