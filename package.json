@@ -1,13 +1,14 @@
 {
-  "name": " ",
+  "name": "personal-site",
   "version": "0.0.1",
   "description": "",
   "keywords": "",
   "license": "",
   "author": "",
+  "entry": "index.html pages/about.html pages/works.html pages/connect.html",
   "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel index.html --open",
+    "build": "parcel build index.html pages/about.html pages/works.html pages/connect.html",
+    "dev": "parcel index.html pages/about.html pages/works.html pages/connect.html --open",
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
