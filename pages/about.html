@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0
@@ -200,6 +202,105 @@
     a:visited { text-decoration: none; color: black}
     a:hover { text-decoration: none; }
     a:active { text-decoration: none; }
+
+    @media (min-width: 601px) {
+      .dropdown-menu {
+        display: none;
+      }
+      .dropdown-btn{
+        display: none;
+      }
+      .nav-item{
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .wrapper{
+        padding-bottom: 30px;
+      }
+      .main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .about-text{
+        width: 100%;
+        padding: 30px 0;
+      }
+      .about-text h1{
+        width: 100%;
+        padding: 0 15px;
+      }
+      .about-text h5{
+        width: 100%;
+        padding: 0 30px;
+      }
+      .about-text p{
+        width: 100%;
+        padding: 0 20px;
+      }
+      .main img{
+        max-width: 300px;
+      }
+      .navbar{
+        display: none;
+      }
+      .dropdown-btn{
+        display: block;
+      }
+      .small-item a{
+        text-decoration: none;
+        color: #5f5f5f;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .dropdown-menu{
+        align-items: center;
+        justify-content: center;
+        display: none;
+        flex-direction: column;
+        list-style: none;
+        transition: opacity 0.5s ease-in-out;
+        padding-bottom: 30px;
+      }
+      .dropdown-menu.show{
+        display: flex;
+        opacity: 1;
+      }
+      .dropdown-menu.hide{
+        opacity: 0;
+      }
+      .small-item{
+        padding: 5px 0;
+        text-shadow: 1px 1px 2px pink;
+      }
+    }
+
+    .dropdown-btn button {
+      background: transparent;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      margin-left: 15px;
+      margin-top: 20px;
+    }
+
+    .dropdown-btn button:after {
+      left: auto;
+      right: 10px;
+    }
+
+    .dropdown-btn{
+      position: relative;
+    }
+
+    svg {
+      fill: #5f5f5f;
+    }
   </style>
 </head>
 
@@ -208,10 +309,25 @@
   <div class="container">
     <div class="navbar">
       <ul>
-        <li><a href="../index.html">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="works.html">WORKS</a></li>
-        <li><a href="connect.html">CONNECT</a></li>
+        <li class="nav-item"><a href="../index.html">HOME</a></li>
+        <li class="nav-item"><a href="about.html">ABOUT</a></li>
+        <li class="nav-item"><a href="works.html">LISTEN</a></li>
+        <li class="nav-item"><a href="connect.html">CONNECT</a></li>
+      </ul>
+    </div>
+    <div class="dropdown-btn">
+      <button id="dropdown-btn" onclick="toggleDropdown()">
+        <svg width="30" height="30">
+          <rect width="30" height="4" y="13" />
+          <rect width="30" height="4" y="6" />
+          <rect width="30" height="4" y="20" />
+        </svg>
+      </button>
+      <ul class="dropdown-menu">
+        <li class="small-item"><a href="../index.html">Home</a></li>
+        <li class="small-item"><a href="about.html">About</a></li>
+        <li class="small-item"><a href="works.html">Listen</a></li>
+        <li class="small-item"><a href="connect.html">Connect</a></li>
       </ul>
     </div>
     <div class="content">
@@ -228,8 +344,8 @@
             <br>
             <br>
             In my free time, I produce music for fun! I publish music on all platforms under the pseudonym 'KingMasterKenny'
-            which can be found in the links below. Under the 'works' section of this site, I put up some tracks with no
-            words which you can enjoy :)
+            which can be found in the links below. Under the 'Listen' section of this site, I put up some sampla tracks I
+            produced which you can enjoy :)
           </p>
         </div>
       </div>
@@ -271,6 +387,20 @@
     </div>
 
   </div>
+
+  <script>
+    const dropdownMenu = document.getElementsByClassName("dropdown-menu")[0];
+    const dropdownBtn = document.getElementById("dropdown-btn");
+    function toggleDropdown() {
+      if (dropdownMenu.classList.contains("show")) {
+        dropdownMenu.classList.remove("show");
+        dropdownMenu.classList.add("hide");
+      } else {
+        dropdownMenu.classList.add("show");
+        dropdownMenu.classList.remove("hide");
+      }
+    }
+  </script>
 
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->

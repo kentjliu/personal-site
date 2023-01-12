@@ -9,6 +9,7 @@
   <!--<link rel="stylesheet" href="css/normalize.css">-->
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -16,12 +17,28 @@
   <div class="container">
     <div class="navbar">
       <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="pages/about.html">ABOUT</a></li>
-        <li><a href="pages/works.html">WORKS</a></li>
-        <li><a href="pages/connect.html">CONNECT</a></li>
+        <li class="nav-item"><a href="index.html">HOME</a></li>
+        <li class="nav-item"><a href="pages/about.html">ABOUT</a></li>
+        <li class="nav-item"><a href="pages/works.html">LISTEN</a></li>
+        <li class="nav-item"><a href="pages/connect.html">CONNECT</a></li>
       </ul>
     </div>
+    <div class="dropdown-btn">
+      <button id="dropdown-btn">
+        <svg width="30" height="30">
+          <rect width="30" height="4" y="13" />
+          <rect width="30" height="4" y="6" />
+          <rect width="30" height="4" y="20" />
+        </svg>
+      </button>
+      <ul class="dropdown-menu closed">
+        <li class="small-item"><a href="index.html">Home</a></li>
+        <li class="small-item"><a href="pages/about.html">About</a></li>
+        <li class="small-item"><a href="pages/works.html">Listen</a></li>
+        <li class="small-item"><a href="pages/connect.html">Connect</a></li>
+      </ul>
+    </div>
+
 
     <div class="content">
       <div class="left-col">
@@ -56,6 +73,20 @@
       icon.src = "img/play.png"
     }
   </script>-->
+  <script>
+    const dropdownBtn = document.getElementById("dropdown-btn");
+
+    dropdownBtn.addEventListener("click", function () {
+      const dropdownMenu = document.getElementsByClassName("dropdown-menu")[0];
+      if (dropdownMenu.classList.contains("closed")) {
+        dropdownMenu.classList.remove("closed");
+        dropdownMenu.classList.add("open");
+      } else {
+        dropdownMenu.classList.add("closed");
+        dropdownMenu.classList.remove("open");
+      }
+    });
+  </script>
 
   <script type="module">
     document.addEventListener("DOMContentLoaded", function () {
