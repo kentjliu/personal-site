@@ -103,12 +103,13 @@
       const icon = document.getElementById("icon");
 
       icon.onclick = function (){
+        console.log(randomFile);
         if(randomFile.paused){
           randomFile.play();
-          // icon.src = "img/pause.png";
+          icon.src = `img/pause.png?v=${Date.now()}`;
         } else{
           randomFile.pause();
-          // icon.src = "img/play.png";
+          icon.src = `img/play.png?v=${Date.now()}`;
         }
       }
 
