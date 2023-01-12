@@ -163,6 +163,19 @@ svg {
   fill: #5f5f5f;
 }
 
+.giphy{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: transparent;
+}
+#dancer {
+  position: absolute;
+  z-index: 1;
+  cursor: move;
+}
+
+
 
 
 

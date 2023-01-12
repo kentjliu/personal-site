@@ -49,6 +49,9 @@
         <img src="img/play.png" id="icon" alt="#">
       </div>
     </div>
+    <div class="giphy" id="dancer">
+      <img src="img/giphy.gif" alt="dancing" onmousedown="startMove(event)">
+    </div>
   </div>
 
   <audio id="mySong">
@@ -119,6 +122,45 @@
         icon.src = "img/play.png"
       }
     })
+  </script>
+
+  <script>
+    let dragValue = null;
+    let x = 0;
+    let y = 0;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    let isDragging = false;
+    function startMove(e) {
+      isDragging = true;
+      console.log('mousedown');
+      dragValue = document.getElementById("dancer");
+      dragValue.style.position = "absolute";
+      const rect = dragValue.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+      x = rect.left;
+      y = rect.top;
+      document.addEventListener("mousemove", move);
+      document.addEventListener("mouseup", stopMove);
+    }
+    function move(e) {
+      if(isDragging) {
+        x = e.clientX - offsetX;
+        y = e.clientY - offsetY;
+        dragValue.style.left = x + "px";
+        dragValue.style.top = y + "px";
+        console.log('move');
+      }
+    }
+
+    function stopMove() {
+      isDragging = false;
+      dragValue = null;
+      document.removeEventListener("mousemove", move);
+      document.removeEventListener("mouseup", stopMove);
+    }
   </script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
