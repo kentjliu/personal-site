@@ -416,6 +416,9 @@
   <!--load tracks-->
   <script src="https://unpkg.com/wavesurfer.js"></script>
   <script type="module">
+    import playIcon from '../img/play1.png';
+    import pauseIcon from '../img/pause1.png';
+
     const audio1 = require('url:../audio/lofiBeat.wav');
     const playButton = document.getElementById("playButton1");
 
@@ -432,21 +435,25 @@
     wavesurfer.load(audio1);
 
     playButton.onclick = function (){
-      wavesurfer.playPause();
-      /*if(playButton.src.includes("play1.png")){
-        playButton.src = "../img/pause1.png";
-      } else{
-        playButton.src = "../img/play1.png";
-      }*/
+      if(wavesurfer.isPlaying()){
+        wavesurfer.playPause();
+        playButton.src = playIcon;
+      } else {
+        wavesurfer.playPause();
+        playButton.src = pauseIcon;
+      }
     }
 
     wavesurfer.on('finish', function (){
-      playButton.src = "../img/play1.png";
+      playButton.src = playIcon;
       wavesurfer.stop();
     })
   </script>
 
   <script type="module">
+    import playIcon2 from '../img/play1.png';
+    import pauseIcon2 from '../img/pause1.png';
+
     const audio2 = require('url:../audio/summertimeFunk.wav');
     const playButton2 = document.getElementById("playButton2");
 
@@ -463,21 +470,25 @@
     wavesurfer2.load(audio2);
 
     playButton2.onclick = function (){
-      wavesurfer2.playPause();
-      /*if(playButton2.src.includes("play1.png")){
-        playButton2.src = "../img/pause1.png";
-      } else{
-        playButton2.src = "../img/play1.png";
-      }*/
+      if(wavesurfer2.isPlaying()){
+        wavesurfer2.playPause();
+        playButton2.src = playIcon2;
+      } else {
+        wavesurfer2.playPause();
+        playButton2.src = pauseIcon2;
+      }
     }
 
     wavesurfer2.on('finish', function (){
-      playButton2.src = "../img/play1.png";
+      playButton2.src = playIcon2;
       wavesurfer2.stop();
     })
   </script>
 
   <script type="module">
+    import playIcon3 from '../img/play1.png';
+    import pauseIcon3 from '../img/pause1.png';
+
     const audio3 = require('url:../audio/rockMe.wav');
     const playButton3 = document.getElementById("playButton3");
 
@@ -494,21 +505,25 @@
     wavesurfer3.load(audio3);
 
     playButton3.onclick = function (){
-      wavesurfer3.playPause();
-      /*if(playButton3.src.includes("play1.png")){
-        playButton3.src = "../img/pause1.png";
-      } else{
-        playButton3.src = "../img/play1.png";
-      }*/
+      if(wavesurfer3.isPlaying()){
+        wavesurfer3.playPause();
+        playButton3.src = playIcon3;
+      } else {
+        wavesurfer3.playPause();
+        playButton3.src = pauseIcon3;
+      }
     }
 
-    wavesurfer.on('finish', function (){
-      playButton3.src = "../img/play1.png";
-      wavesurfer.stop();
+    wavesurfer3.on('finish', function (){
+      playButton3.src = playIcon3;
+      wavesurfer3.stop();
     })
   </script>
 
   <script type="module">
+    import playIcon4 from '../img/play1.png';
+    import pauseIcon4 from '../img/pause1.png';
+
     const audio4 = require('url:../audio/evenings.wav');
     const playButton4 = document.getElementById("playButton4");
 
@@ -525,21 +540,25 @@
     wavesurfer4.load(audio4);
 
     playButton4.onclick = function (){
-      wavesurfer4.playPause();
-      /*if(playButton4.src.includes("play1.png")){
-        playButton4.src = "../img/pause1.png";
-      } else{
-        playButton4.src = "../img/play1.png";
-      }*/
+      if(wavesurfer4.isPlaying()){
+        wavesurfer4.playPause();
+        playButton4.src = playIcon4;
+      } else {
+        wavesurfer4.playPause();
+        playButton4.src = pauseIcon4;
+      }
     }
 
-    wavesurfer.on('finish', function (){
-      playButton4.src = "../img/play1.png";
-      wavesurfer.stop();
+    wavesurfer4.on('finish', function (){
+      playButton4.src = playIcon4;
+      wavesurfer4.stop();
     })
   </script>
 
   <script type="module">
+    import playIcon5 from '../img/play1.png';
+    import pauseIcon5 from '../img/pause1.png';
+
     const audio5 = require('url:../audio/Royce.wav');
     const playButton5 = document.getElementById("playButton5");
 
@@ -556,21 +575,25 @@
     wavesurfer5.load(audio5);
 
     playButton5.onclick = function (){
-      wavesurfer5.playPause();
-      /*if(playButton5.src.includes("play1.png")){
-        playButton5.src = "../img/pause1.png";
-      } else{
-        playButton5.src = "../img/play1.png";
-      }*/
+      if(wavesurfer5.isPlaying()){
+        wavesurfer5.playPause();
+        playButton5.src = playIcon5;
+      } else {
+        wavesurfer5.playPause();
+        playButton5.src = pauseIcon5;
+      }
     }
 
-    wavesurfer.on('finish', function (){
-      playButton5.src = "../img/play1.png";
-      wavesurfer.stop();
+    wavesurfer5.on('finish', function (){
+      playButton5.src = playIcon5;
+      wavesurfer5.stop();
     })
   </script>
 
   <script type="module">
+    import playIcon6 from '../img/play1.png';
+    import pauseIcon6 from '../img/pause1.png';
+
     const audio6 = require('url:../audio/silk.wav');
     const playButton6 = document.getElementById("playButton6");
 
@@ -587,21 +610,25 @@
     wavesurfer6.load(audio6);
 
     playButton6.onclick = function (){
-      wavesurfer6.playPause();
-      /*if(playButton6.src.includes("play1.png")){
-        playButton6.src = "../img/pause1.png";
-      } else{
-        playButton6.src = "../img/play1.png";
-      }*/
+      if(wavesurfer6.isPlaying()){
+        wavesurfer6.playPause();
+        playButton6.src = playIcon6;
+      } else {
+        wavesurfer6.playPause();
+        playButton6.src = pauseIcon6;
+      }
     }
 
-    wavesurfer.on('finish', function (){
-      playButton6.src = "../img/play1.png";
-      wavesurfer.stop();
+    wavesurfer6.on('finish', function (){
+      playButton6.src = playIcon6;
+      wavesurfer6.stop();
     })
   </script>
 
   <script type="module">
+    import playIcon7 from '../img/play1.png';
+    import pauseIcon7 from '../img/pause1.png';
+
     const audio7 = require('url:../audio/unreleased1.wav');
     const playButton7 = document.getElementById("playButton7");
 
@@ -618,17 +645,18 @@
     wavesurfer7.load(audio7);
 
     playButton7.onclick = function (){
-      wavesurfer7.playPause();
-      /*if(playButton7.src.includes("play1.png")){
-        playButton7.src = "../img/pause1.png";
-      } else{
-        playButton7.src = "../img/play1.png";
-      }*/
+      if(wavesurfer7.isPlaying()){
+        wavesurfer7.playPause();
+        playButton7.src = playIcon7;
+      } else {
+        wavesurfer7.playPause();
+        playButton7.src = pauseIcon7;
+      }
     }
 
-    wavesurfer.on('finish', function (){
-      playButton7.src = "../img/play1.png";
-      wavesurfer.stop();
+    wavesurfer7.on('finish', function (){
+      playButton7.src = playIcon7;
+      wavesurfer7.stop();
     })
   </script>
 
