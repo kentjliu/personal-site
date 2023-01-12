@@ -50,32 +50,15 @@
       </div>
     </div>
     <div class="giphy" id="dancer">
-      <img src="img/giphy.gif" alt="dancing" onmousedown="startMove(event)">
+      <img src="img/giphy.gif" alt="dancing">
     </div>
+    <!--<img src="img/giphy.gif" alt="dancing" class="giphy" id="dancer">-->
   </div>
 
   <audio id="mySong">
     <!--Plays random song from works page-->
   </audio>
 
-  <!--<script type="module">
-    const mySong = document.getElementById("mySong");
-    const icon = document.getElementById("icon");
-
-    icon.onclick = function (){
-      if(mySong.paused){
-        mySong.play();
-        icon.src = "img/pause.png";
-      } else{
-        mySong.pause();
-        icon.src = "img/play.png";
-      }
-    }
-
-    if(mySong.ended){
-      icon.src = "img/play.png"
-    }
-  </script>-->
   <script>
     const dropdownBtn = document.getElementById("dropdown-btn");
 
@@ -125,43 +108,25 @@
   </script>
 
   <script>
-    let dragValue = null;
-    let x = 0;
-    let y = 0;
-    let offsetX = 0;
-    let offsetY = 0;
+    let isAttached = false;
+    let element = document.getElementById("dancer");
 
-    let isDragging = false;
-    function startMove(e) {
-      isDragging = true;
-      console.log('mousedown');
-      dragValue = document.getElementById("dancer");
-      dragValue.style.position = "absolute";
-      const rect = dragValue.getBoundingClientRect();
-      offsetX = e.clientX - rect.left;
-      offsetY = e.clientY - rect.top;
-      x = rect.left;
-      y = rect.top;
-      document.addEventListener("mousemove", move);
-      document.addEventListener("mouseup", stopMove);
+    element.onmousedown = function () {
+      isAttached = !isAttached;
     }
-    function move(e) {
-      if(isDragging) {
-        x = e.clientX - offsetX;
-        y = e.clientY - offsetY;
-        dragValue.style.left = x + "px";
-        dragValue.style.top = y + "px";
-        console.log('move');
+
+    document.onmousemove = function (e) {
+      if (isAttached) {
+        let x = e.pageX;
+        let y = e.pageY;
+        element.style.left = x - 80 + "px";
+        element.style.top = y - 60 + "px";
       }
     }
-
-    function stopMove() {
-      isDragging = false;
-      dragValue = null;
-      document.removeEventListener("mousemove", move);
-      document.removeEventListener("mouseup", stopMove);
-    }
   </script>
+
+
+
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
