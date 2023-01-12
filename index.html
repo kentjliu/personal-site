@@ -89,6 +89,8 @@
   </script>
 
   <script type="module">
+    import playIcon from './img/play.png';
+    import pauseIcon from './img/pause.png';
     document.addEventListener("DOMContentLoaded", function () {
       const audio1 = new Audio(require('url:./audio/evenings.wav'));
       const audio2 = new Audio(require('url:./audio/lofiBeat.wav'));
@@ -106,10 +108,10 @@
         console.log(randomFile);
         if(randomFile.paused){
           randomFile.play();
-          icon.src = "img/pause.png";
+          icon.src = pauseIcon;
         } else{
           randomFile.pause();
-          icon.src = "img/play.png";
+          icon.src = playIcon;
         }
       }
 
