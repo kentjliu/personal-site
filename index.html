@@ -51,6 +51,7 @@
     </div>
     <div class="giphy" id="dancer">
       <img src="img/giphy.gif" alt="dancing">
+      <div id="message"></div>
     </div>
     <!--<img src="img/giphy.gif" alt="dancing" class="giphy" id="dancer">-->
   </div>
@@ -110,6 +111,26 @@
   <script>
     let isAttached = false;
     let element = document.getElementById("dancer");
+    let message = document.getElementById("message");
+    let isMessageShown = false;
+    let timeout;
+
+    element.onmouseover = function () {
+      if(!isMessageShown){
+        message.innerHTML = "Click to pick up/put down";
+        message.style.visibility = "visible";
+        message.style.opacity = "1";
+        setTimeout(function () {
+          message.style.opacity = "0";
+          message.style.visibility = "hidden";
+        }, 3000);
+        isMessageShown = true;
+      }
+    }
+
+    element.onmouseout = function () {
+      clearTimeout(timeout);
+    }
 
     element.onmousedown = function () {
       isAttached = !isAttached;
