@@ -396,6 +396,18 @@
         </div>
       </div>
     </div>
+
+    <div class="trackWrapper">
+      <div class="music">
+        <p>Genre: Chill</p>
+        <h1>A Night On the Town</h1>
+        <div class="track">
+          <img src="../img/play1.png" alt="play button" id="playButton8">
+          <div id="waveform8"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="wrapper">
       <div class="button">
         <a href="https://www.linkedin.com/in/kent-liu-499a9a216/" target="_blank">
@@ -729,6 +741,41 @@
     wavesurfer7.on('finish', function (){
       playButton7.src = playIcon7;
       wavesurfer7.stop();
+    })
+  </script>
+
+  <script type="module">
+    import playIcon8 from '../img/play1.png';
+    import pauseIcon8 from '../img/pause1.png';
+
+    const audio8 = require('url:../audio/ANightOnTheTown.wav');
+    const playButton8 = document.getElementById("playButton8");
+
+    const wavesurfer8 = WaveSurfer.create({
+      container: '#waveform8',
+      waveColor: '#ddd',
+      progressColor: '#ff006c',
+      barWidth: 4,
+      responsive: true,
+      height: 90,
+      barRadius: 4
+    });
+
+    wavesurfer8.load(audio8);
+
+    playButton8.onclick = function (){
+      if(wavesurfer8.isPlaying()){
+        wavesurfer8.playPause();
+        playButton8.src = playIcon8;
+      } else {
+        wavesurfer8.playPause();
+        playButton8.src = pauseIcon8;
+      }
+    }
+
+    wavesurfer8.on('finish', function (){
+      playButton8.src = playIcon8;
+      wavesurfer8.stop();
     })
   </script>
 
